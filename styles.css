@@ -1,0 +1,123 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(156, 156, 156);
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+    width: 50%;
+    margin: auto;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    width: 5em;
+}
+
+#window-container {
+    width: 20em;
+    height: 10em;
+    background-color: rgb(63, 63, 63);
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.button {
+    padding: 1.5em 0;
+    margin: 1em 0;
+    background-color: rgb(63, 63, 63);
+    border: 1px solid rgb(214, 214, 214);
+}
+
+#game-title {
+    text-align: center;
+    padding-top: 0.5em;
+    color:rgb(27, 27, 27);
+    font-size: 40px;
+    -webkit-text-stroke: 0.7px rgb(214, 214, 214);
+}
+
+.rock-icon {
+    font-size: 20px;
+}
+
+.scissors-icon {
+    font-size: 20px;
+}
+
+.paper-icon {
+    font-size: 20px;
+}
+
+#score-board-container {
+    position: fixed;
+    float: left;
+    margin-left: 2em;
+    background-color: rgb(63, 63, 63);
+    border: 1px solid rgb(214, 214, 214);
+    height: 6em;
+    width: 12em;
+    display: flex;
+    flex-direction: row;
+}
+
+#score-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6em;
+    margin: auto;
+}
+
+#score-tracker {
+    width: 6em;
+    display: flex;
+    flex-direction: column;
+}
+
+.scorer {
+    font-size: 15px;
+    margin-left: 0.5em;
+    color:rgb(214, 214, 214);
+    -webkit-text-stroke: 0.1px rgb(63, 63, 63);
+}
+
+#player-tracker {
+    width: 7em;
+    height: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0.2em;
+    padding-left: 0.1em;
+}
+
+#computer-tracker{ 
+    width: 7em;
+    height: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0.2em;
+    padding-left: 0.1em;
+}
+
+.point {
+    height: 1em;
+    width: 1em;
+    background-color: rgb(214, 214, 214);
+    border: 1px solid rgb(63, 63, 63);
+    margin-right: 1em;
+    border-radius: 20px;
+}

@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
         <title>Rock Paper Scissors</title>
     </head>
     <body>
+        <div id="score-board-container">
+            <div id="score-board">
+                <h2 class="scorer">
+                    Player
+                </h2>
+                <h2 class="scorer">
+                    Computer
+                </h2>
+            </div>
+            <div id="score-tracker">
+                <div id="player-tracker"></div>
+                <div id="computer-tracker"></div>
+            </div>
+        </div>
+        <h1 id="game-title">Rock Paper Scissors</h1>
+        <div id="main-container">
+            <div id="button-container">
+                <button id="rock" class="button"><i class="em em-fist rock-icon"></i></button>
+                <button id="scissors" class="button"><i class="em em-v scissors-icon"></i></button>
+                <button id="paper" class="button"><i class="em em-raised_hand_with_fingers_splayed paper-icon"></i></button>
+            </div>
+            <div id="window-container">
+                
+            </div>
+        </div>
         <script src="gamescript.js"></script>
     </body>
 </html>

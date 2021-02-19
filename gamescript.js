@@ -54,8 +54,8 @@ function declareVictor() {
     }
 }
 
-const numberOfGames = window.prompt("How many games: ");
+//const numberOfGames = window.prompt("How many games: ");
 let playerScore = 0;
 let computerScore = 0;
-game();
-declareVictor();
+//game();
+//declareVictor();
