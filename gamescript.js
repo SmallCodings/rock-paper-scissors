@@ -1,43 +1,36 @@
 function computerPlay() {
     const computerPick = Math.floor((Math.random() * 3) + 1);
     if(computerPick == 1) {
-        return "paper";
+        computerSelection = "paper";
     }
     else if(computerPick == 2) {
-        return "scissors";
+        computerSelection = "scissors";
     }
     else {
-        return "rock";
+        computerSelection = "rock";
     }
+    alert(computerSelection);
 }
 
-function selectionJudge(playerSelection, computerSelection) {
-    if(playerSelection.toLowerCase() == computerSelection) {
+function selectionJudge() {
+    if (playerSelection == computerSelection) {
         console.log("Draw!");
     }
-    else if(playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
+    else if (playerSelection == "rock" && computerSelection == "scissors") {
         ++playerScore;
         console.log("Win!");
     }
-    else if(playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
+    else if (playerSelection == "scissors" && computerSelection == "paper") {
         ++playerScore;
         console.log("Win!");
     }
-    else if(playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
+    else if (playerSelection == "paper" && computerSelection == "rock") {
         ++playerScore;
         console.log("Win!");
     }
     else {
         ++computerScore;
         console.log("Lose!");
-    }
-}
-
-function game() {
-    for(let i = 0; i < numberOfGames; i++) {
-        const playerSelection = window.prompt("Your choice: ");
-        const computerSelection = computerPlay();
-        selectionJudge(playerSelection, computerSelection);
     }
 }
 
@@ -54,8 +47,55 @@ function declareVictor() {
     }
 }
 
-//const numberOfGames = window.prompt("How many games: ");
+function checkGameEnd() {
+    if (playerScore == 3 || computerScore == 3) {
+        declareVictor();
+        return true;
+    }
+    return false;
+}
+
+function startNextGame(pSelection) {
+    if (checkGameEnd() == false) {
+        playerSelection = pSelection;
+        computerPlay();
+        selectionJudge();
+        alert(playerScore + " " + computerScore);
+        if (checkGameEnd() == true) {
+            endGame();
+        }
+    }
+    else {
+        restartGame();
+    }
+}
+
+function configureGame() {
+    rock.addEventListener("click", () => {
+        startNextGame("rock");
+    });
+
+    scissors.addEventListener("click", () => {
+        startNextGame("scissors");
+    });
+
+    paper.addEventListener("click", () => {
+        startNextGame("paper");
+    });
+}
+
+
+function restartGame() {
+    alert("restarting game");
+    playerScore = 0;
+    computerScore = 0;
+}
+
+const rock = document.querySelector("#rock");
+const scissors = document.querySelector("#scissors");
+const paper = document.querySelector("#paper");
+
+let playerSelection
 let playerScore = 0;
 let computerScore = 0;
-//game();
-//declareVictor();
+configureGame();
